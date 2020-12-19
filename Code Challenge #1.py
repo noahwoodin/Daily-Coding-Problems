@@ -4,14 +4,11 @@
 # For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
 
 def checker(num_list, k):
-    list_spot = 1
+    seen_set = set()
     for num in num_list:
-        counter = list_spot
-        while counter < len(num_list):
-            if num + num_list[counter] == k:
-                return True
-            counter += 1
-        list_spot += 1
+        if (k-num) in seen_set:
+            return True
+        seen_set.add(num)
     return False
 
 
