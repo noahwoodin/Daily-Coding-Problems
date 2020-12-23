@@ -5,6 +5,8 @@
 # The array can contain duplicates and negative numbers as well.
 
 def smallest_pos(array):
+    if not array:
+        return 1
     array = [num for num in array if num > 0]
     array.sort()
     for counter, num in enumerate(array):
@@ -13,5 +15,5 @@ def smallest_pos(array):
     return counter+2
 
 
-print(smallest_pos([3, 4, -1, 1]))
-print(smallest_pos([1, 2, 0]))
+assert smallest_pos([3, 4, -1, 1]) == 2
+assert smallest_pos([1, 2, 0]) == 3
